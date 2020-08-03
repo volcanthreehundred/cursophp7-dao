@@ -57,6 +57,23 @@ class Usuario {
 		}
 	}
 
+	public function loadByName($name){
+		$sql = new Sql();
+
+		$usuario = $sql->select("SELECT * FROM tb_usuarios WHERE deslogin = :LOGIN", array(
+			":LOGIN"=>$name
+		));
+
+		if(count($usuario) > 0){
+			$row = $usuario[0];
+
+			$this->setIdusuario($row['idusuario']);
+			$this->setDeslogin($row['deslogin']);
+			$this->setDessenha($row['dessenha']);
+			$this->setDtcadastro(new DateTime($row['dtcadastro']));
+		}
+	}
+
 	public function __toString(){
 
 

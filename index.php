@@ -4,7 +4,7 @@
 
 	$volcan = new Usuario();
 
-	$volcan->loadById(10);
+	$volcan->loadByName("luiz");
 
 	echo $volcan;
 
