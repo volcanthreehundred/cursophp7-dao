@@ -2,10 +2,11 @@
 
 	require_once("config.php");
 
-	$volcan = new Usuario();
+	$logar = new Usuario();
 
-	$volcan->loadByName("volcan");
+	$logar->login("luiz", "henrique");
 
-	echo $volcan;
+	echo $logar;
+
 
 ?>
