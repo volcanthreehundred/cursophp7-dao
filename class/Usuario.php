@@ -139,7 +139,7 @@ class Usuario {
 
 		$this->setDeslogin($deslogin);
 		$this->setDessenha($dessenha);
-		
+
 		$sql = new Sql();
 
 		$updating = $sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
@@ -148,6 +148,14 @@ class Usuario {
 			':ID' => $this->getIdusuario()
 		));
 
+	}
+
+	public static function delete($id){
+		$sql = new Sql();
+
+		$deleted = $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+			":ID"=> $id
+		));
 	}
 }
 
