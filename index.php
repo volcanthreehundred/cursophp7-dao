@@ -2,11 +2,12 @@
 
 	require_once("config.php");
 
-	$logar = new Usuario();
+	$usuario = new Usuario();
 
-	$logar->login("luiz", "henrique");
+	$usuario->loadById(22);
 
-	echo $logar;
+	$usuario->update("pai", "king");
 
+	echo $usuario;
 
 ?>
